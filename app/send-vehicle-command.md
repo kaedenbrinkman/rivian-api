@@ -1,0 +1,61 @@
+---
+title: sendVehicleCommand
+parent: App API
+has_children: false
+nav_order: 3
+---
+
+# sendVehicleCommand
+
+## Overview
+
+The `sendVehicleCommand` endpoint is used to send a command to the vehicle. All commands are signed with a HMAC from the phone's private key.
+
+## List of Commands
+
+```
+OPEN_FRUNK
+CLOSE_FRUNK
+OPEN_ALL_WINDOWS
+CLOSE_ALL_WINDOWS
+UNLOCK_ALL_CLOSURES
+LOCK_ALL_CLOSURES
+ENABLE_GEAR_GUARD_VIDEO
+DISABLE_GEAR_GUARD_VIDEO
+```
+
+`POST https://rivian.com/api/gql/gateway/graphql`
+
+### Request Body
+
+```json
+{
+  "operationName": "sendVehicleCommand",
+  "variables": {
+    "attrs": {
+      "command": "UNLOCK_ALL_CLOSURES",
+      "hmac": <your-hmac>,
+      "timestamp": <command-timestamp>,
+      "vasPhoneId": <your-phone-id>,
+      "deviceId": <your-device-id>,
+      "vehicleId": <your-vehicle-id>
+    }
+  },
+  "query": "mutation sendVehicleCommand($attrs: VehicleCommandAttributes!) { sendVehicleCommand(attrs: $attrs) { __typename id command state } }"
+}
+```
+
+### Example Response
+
+```json
+{
+  "data": {
+    "sendVehicleCommand": {
+      "__typename": "SendVehicleCommandState",
+      "id": <some-command-id>,
+      "command": "UNLOCK_ALL_CLOSURES",
+      "state": 1
+    }
+  }
+}
+```
