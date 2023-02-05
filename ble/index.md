@@ -28,13 +28,10 @@ The BLE API uses the "Rivian Phone Key" device to send VAS commands and receive 
 - `5ae32b92-eafb-471b-afe8-e88eec4a4774`: Characteristic UUID (Unknown)
 - `afb2e704-842b-4e6a-9bd2-b1b305828f24`: Characteristic UUID (Read, Vehicle Status)
 
-## Enrolling a Phone Key
-
-See [Ennrollment](/ble/enroll) for more information.
-
 ## List of Commands
 
 ```
+WAKE_VEHICLE
 OPEN_FRUNK
 CLOSE_FRUNK
 OPEN_ALL_WINDOWS
@@ -43,4 +40,7 @@ UNLOCK_ALL_CLOSURES
 LOCK_ALL_CLOSURES
 ENABLE_GEAR_GUARD_VIDEO
 DISABLE_GEAR_GUARD_VIDEO
+HONK_AND_FLASH_LIGHTS
+OPEN_TONNEAU_COVER
+CLOSE_TONNEAU_COVER
 ```
