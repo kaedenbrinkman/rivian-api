@@ -18,6 +18,7 @@ See [Authentication](/app/authentication) for more information.
 - `EnrollPhone` - enroll a new phone key
 - `getNonRivianUserSession` - get non-Rivian charging session details
 - `vehicleOrders` - list vehicle orders for your account
+- `searchOrders` - list retail orders for your account
 - `order` - get order details
 - `planTrip` - plan charging for a trip
 - `GetProvisionedCampSpeakers` - list camp speakers in your account
