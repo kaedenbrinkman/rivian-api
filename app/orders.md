@@ -19,7 +19,7 @@ The `vehicleOrders` endpoint returns the list of vehicles you have on order.
 {
   "operationName": "vehicleOrders",
   "variables": {},
-  "query": "query vehicleOrders { orders(input: {orderTypes: [PRE_ORDER, VEHICLE], pageInfo: {from: 0, size: 10000}}) { __typename data { __typename id state fulfillmentSummaryStatus items { __typename sku } consumerStatuses { __typename isConsumerFlowComplete } } } }"
+  "query": "query vehicleOrders { orders(input: {orderTypes: [PRE_ORDER, VEHICLE], pageInfo: {from: 0, size: 10000}}) { __typename data { __typename id state configurationStatus fulfillmentSummaryStatus items { __typename sku } consumerStatuses { __typename isConsumerFlowComplete } } } }"
 }
 ```
 
@@ -35,6 +35,7 @@ The `vehicleOrders` endpoint returns the list of vehicles you have on order.
           "__typename": "Order",
           "id": <your-order-id>,
           "state": "ORDERED",
+          "configurationStatus": "SOFT_LOCKED",
           "fulfillmentSummaryStatus": "VEHICLE_DELIVERED",
           "items": [
             {
