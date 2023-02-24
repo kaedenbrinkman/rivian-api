@@ -20,6 +20,8 @@ See [Authentication](/app/authentication) for more information.
 - `vehicleOrders` - list vehicle orders for your account
 - `searchOrders` - list retail orders for your account
 - `order` - get order details
+- `transactionStatus` - get transaction details (steps)
+- `financeSummary` - get financing details
 - `planTrip` - plan charging for a trip
 - `GetProvisionedCampSpeakers` - list camp speakers in your account
 - `RegisterPushNotificationToken` - register a push notification token for your account
@@ -27,6 +29,9 @@ See [Authentication](/app/authentication) for more information.
 - `ParseAndShareLocationToVehicle` - share a location to your vehicle
 - `getUserInfo` - get user information
 - `user` - get user information for orders
+- `paymentMethods` - get user payment methods
+- `CheckByRivianId` - shows third-party accounts linked to your Rivian account
+- `getLinkedEmailForRivianId` - shows email addresses for third-party accounts linked to your Rivian account
 - `getVehicleImages` - get images for your vehicle configuration
 - `GetVehicleLastConnection` - get the last time your vehicle synced to Rivian Cloud
 - `GetVehicleState` - get vehicle state information
