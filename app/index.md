@@ -25,6 +25,7 @@ See [Authentication](/app/authentication) for more information.
 - `getRegisteredWallboxes` - list Rivian Chargers in your account
 - `ParseAndShareLocationToVehicle` - share a location to your vehicle
 - `getUserInfo` - get user information
+- `user` - get user information for orders
 - `getVehicleImages` - get images for your vehicle configuration
 - `GetVehicleLastConnection` - get the last time your vehicle synced to Rivian Cloud
 - `GetVehicleState` - get vehicle state information
