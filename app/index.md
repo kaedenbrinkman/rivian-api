@@ -32,6 +32,7 @@ See [Authentication](/app/authentication) for more information.
 - `paymentMethods` - get user payment methods
 - `CheckByRivianId` - shows third-party accounts linked to your Rivian account
 - `getLinkedEmailForRivianId` - shows email addresses for third-party accounts linked to your Rivian account
+- `getOTAUpdateDetails` - get OTA update details
 - `getVehicleImages` - get images for your vehicle configuration
 - `GetVehicleLastConnection` - get the last time your vehicle synced to Rivian Cloud
 - `GetVehicleState` - get vehicle state information
