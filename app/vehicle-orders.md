@@ -13,6 +13,14 @@ The `vehicleOrders` endpoint returns the list of vehicles you have on order.
 
 `POST https://rivian.com/api/gql/gateway/graphql`
 
+### Required Headers
+
+```text
+a-sess: <your app session token>
+u-sess: <your user session token>
+csrf-token: <your CSRF token from the previous request>
+```
+
 ### Request Body
 
 ```json
