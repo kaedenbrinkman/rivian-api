@@ -20,7 +20,7 @@ For more information on BLE commands, see [BLE API](/ble/).
 ```text
 a-sess: <your app session token>
 u-sess: <your user session token>
-csrf-token: <your CSRF token from the previous request>
+csrf-token: <your CSRF token>
 ```
 
 ### Request Body

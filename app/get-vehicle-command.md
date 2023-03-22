@@ -18,7 +18,7 @@ The `getVehicleCommand` endpoint is used to get the status of a sent vehicle com
 ```text
 a-sess: <your app session token>
 u-sess: <your user session token>
-csrf-token: <your CSRF token from the previous request>
+csrf-token: <your CSRF token>
 ```
 
 ### Request Body

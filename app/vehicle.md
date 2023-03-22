@@ -18,7 +18,7 @@ The `GetVehicle` endpoint returns details on the given vehicle, including who ha
 ```text
 a-sess: <your app session token>
 u-sess: <your user session token>
-csrf-token: <your CSRF token from the previous request>
+csrf-token: <your CSRF token>
 ```
 
 ### Request Body

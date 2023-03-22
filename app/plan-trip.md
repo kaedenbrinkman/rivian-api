@@ -18,7 +18,7 @@ The `planTrip` endpoint is used for planning charging stops along a route.
 ```text
 a-sess: <your app session token>
 u-sess: <your user session token>
-csrf-token: <your CSRF token from the previous request>
+csrf-token: <your CSRF token>
 ```
 
 ### Request Body

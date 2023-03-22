@@ -13,6 +13,8 @@ Authentication involves requesting a CSRF token and then using that token to req
 
 ## Requesting a CSRF Token
 
+A CSRF token, or cross-site request forgery token, is a token that is used to prevent cross-site request forgery attacks. For more information, see [CSRF](https://en.wikipedia.org/wiki/Cross-site_request_forgery).
+
 `POST https://rivian.com/api/gql/gateway/graphql`
 
 ### Request Body
