@@ -22,5 +22,8 @@ See [Vehicle CAN API](/can) for more information.
 ## Configurator Image API
 See [Configurator API](/configurator/) for more information.
 
+## Hardware Teardown
+See [Hardware Teardown](/teardown/) for more information.
+
 ## Contributing
 To contribute, submit a pull request to the [GitHub repository](https://github.com/kaedenbrinkman/rivian-api).
