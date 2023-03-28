@@ -1,10 +1,11 @@
 ---
 title: Account Endpoints
 has_children: true
+parent: App API
 nav_order: 2
 ---
 
-# App API
+# Account Endpoints
 
 ## Overview
 
