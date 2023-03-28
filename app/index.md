@@ -18,9 +18,9 @@ See [Authentication](/app/authentication) for more information.
 
 Once authenticated, check out the [`getUserInfo`](/app/user-info) endpoint to get your user ID and vehicle ID. You can use these IDs to make requests to the API.
 
-## Endpoints
+## What can you do?
 
-- [`Account Information`](/app/account/): view your orders, connected accounts, payment methods, linked products, and personal info.
-- [`Charging`](/app/charging/): view the status of your wallbox and charging sessions.
-- [`Controls`](/app/controls/): lock/unlock your vehicle, share a location to your vehicle, and more.
-- [`Vehicle Information`](/app/vehicle-info/): view your vehicle's VIN, state of charge, odometer, location, OTA update release notes, and more.
+- [`Account Information`](/app/account): view your orders, connected accounts, payment methods, linked products, and personal info.
+- [`Charging`](/app/charging): view the status of your wallbox and charging sessions.
+- [`Controls`](/app/controls): lock/unlock your vehicle, share a location to your vehicle, plan a trip, and more.
+- [`Vehicle Information`](/app/vehicle-info): view your vehicle's VIN, state of charge, odometer, location, OTA update release notes, and more.

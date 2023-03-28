@@ -21,5 +21,5 @@ Vehicle commands require your device to be enrolled as a phone key. You can enro
 - [`EnrollPhone`](/app/controls/enroll-phone) - enroll a new phone key
 -  [`DisenrollPhone`](/app/controls/disenroll-phone) - disenroll a phone key
 - [`ParseAndShareLocationToVehicle`](/app/controls/share-location) - share a location to your vehicle
-- [`getVehicleCommand`] - get the status of a vehicle command
-- [`sendVehicleCommand`] - send a vehicle command
+- [`getVehicleCommand`](/app/controls/get-vehicle-command) - get the status of a vehicle command
+- [`sendVehicleCommand`](/app/controls/send-vehicle-command) - send a vehicle command
