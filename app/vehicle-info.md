@@ -2,7 +2,7 @@
 title: Vehicle Info Endpoints
 has_children: true
 parent: App API
-nav_order: 2
+nav_order: 3
 ---
 
 # Vehicle Info Endpoints

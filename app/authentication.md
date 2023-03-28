@@ -2,7 +2,7 @@
 title: Authentication
 parent: App API
 has_children: false
-nav_order: 3
+nav_order: 1
 ---
 
 # Authentication
