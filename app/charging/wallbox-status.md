@@ -1,6 +1,7 @@
 ---
 title: getWallboxStatus
 parent: Charging Endpoints
+grand_parent: App API
 has_children: false
 nav_order: 3
 ---

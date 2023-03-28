@@ -1,6 +1,7 @@
 ---
 title: getOTAUpdateDetails
 parent: Vehicle Info Endpoints
+grand_parent: App API
 has_children: false
 nav_order: 3
 ---
