@@ -1,6 +1,6 @@
 ---
 title: financeSummary
-parent: App API
+parent: Account Endpoints
 has_children: false
 nav_order: 3
 ---

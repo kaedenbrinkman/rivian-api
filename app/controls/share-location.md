@@ -1,6 +1,6 @@
 ---
 title: ParseAndShareLocationToVehicle
-parent: App API
+parent: Vehicle Controls
 has_children: false
 nav_order: 3
 ---

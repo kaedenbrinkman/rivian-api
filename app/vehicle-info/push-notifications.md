@@ -1,6 +1,6 @@
 ---
 title: RegisterPushNotificationToken
-parent: App API
+parent: Vehicle Info Endpoints
 has_children: false
 nav_order: 3
 ---

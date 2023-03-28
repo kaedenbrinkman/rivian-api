@@ -1,6 +1,6 @@
 ---
 title: searchOrders
-parent: App API
+parent: Account Endpoints
 has_children: false
 nav_order: 3
 ---
@@ -19,10 +19,10 @@ The `searchOrders` endpoint returns a list of retail orders.
 {
   "operationName": "searchOrders",
   "variables": {
-    "orderTypes": ["RETAIL"], 
-    "orderStates": null, 
-    "pageInfo": {"from": 0, "size": 5}, 
-    "dateRange": null, 
+    "orderTypes": ["RETAIL"],
+    "orderStates": null,
+    "pageInfo": {"from": 0, "size": 5},
+    "dateRange": null,
     "sortFields": {"orderDate": "DESC"}
   },
   "query": "query searchOrders($input: UserOrderSearchInput!) { searchOrders(input: $input) { total data { id type orderDate state fulfillmentSummaryStatus items { id title type sku __typename } __typename } __typename }}"
