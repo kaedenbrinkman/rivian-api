@@ -3,6 +3,7 @@ title: Vehicle Controls
 has_children: true
 parent: App API
 nav_order: 4
+permalink: /app/controls
 ---
 
 # Vehicle Controls

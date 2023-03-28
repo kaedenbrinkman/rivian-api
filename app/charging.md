@@ -3,6 +3,7 @@ title: Charging Endpoints
 has_children: true
 parent: App API
 nav_order: 5
+permalink: /app/charging
 ---
 
 # Charging Endpoints

@@ -3,6 +3,7 @@ title: Vehicle Info Endpoints
 has_children: true
 parent: App API
 nav_order: 3
+permalink: /app/vehicle-info
 ---
 
 # Vehicle Info Endpoints
