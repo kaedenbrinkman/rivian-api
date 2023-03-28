@@ -10,6 +10,8 @@ nav_order: 2
 
 This section contains information about the Rivian Phone Key BLE API. The API is used by the Rivian Phone Key to communicate directly with the vehicle, without an internet connection.
 
+These commands mirror the internet-based commands in the [`sendVehicleCommand`](/app/controls/send-vehicle-command) endpoint. The BLE API allows for commands to be sent quicker when you are near your vehicle. BLE is also used for proximity detection, both for phone key and the key fob.
+
 # BLE Devices
 
 - Rivian Sensor 1 For sensing the proximity of BLE keys

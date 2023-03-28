@@ -19,6 +19,7 @@ https://rivian.com/compimg/
 ```
 https://rivian.com/compimg/r1s/2.2/us/exp-lgr_ord-ad3_pkg-lch_whl-1rd@3072x2688.front.webp
 ```
+![R1S Example](https://rivian.com/compimg/r1s/2.2/us/exp-lgr_ord-ad3_pkg-lch_whl-1rd@3072x2688.front.webp)
 
 ## Views
 ```

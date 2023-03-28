@@ -12,7 +12,19 @@ nav_order: 3
 
 The `sendVehicleCommand` endpoint is used to send a command to the vehicle. All commands are signed with a HMAC from the phone's private key.
 
-Vehicle commands require an HMAC signature to be sent with the request. The HMAC is generated using the command name and the current timestamp, using a shared key generated from the phone's private key and the vehicle's public key. The vehicle's public key is available in the `vehiclePublicKey` field of the `getUserInfo` endpoint.
+Vehicle commands require an HMAC signature to be sent with the request. The HMAC is calculated from the command name and timestamp as follows:
+
+```python
+import hmac
+import hashlib
+timestamp = int(time.time())
+command_name = "UNLOCK_ALL_CLOSURES"
+message = f"{command_name}{timestamp}"
+key = b"your_secret_key_here"
+hmac = hmac.new(key, message.encode(), hashlib.sha256).hexdigest()
+```
+
+The request also requires the ID of your phone key. This is returned from the [EnrollPhone](/app/controls/enroll-phone) endpoint when you set up your device as a phone key.
 
 ## List of Commands
 

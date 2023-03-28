@@ -3,7 +3,7 @@ title: getVehicleCommand
 parent: Vehicle Controls
 grand_parent: App API
 has_children: false
-nav_order: 3
+nav_order: 4
 ---
 
 # getVehicleCommand
