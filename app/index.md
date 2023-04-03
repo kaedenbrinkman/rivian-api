@@ -16,7 +16,7 @@ See [Authentication](/app/authentication) for more information.
 
 ## Getting started
 
-Once authenticated, check out the [`getUserInfo`](/app/user-info) endpoint to get your user ID and vehicle ID. You can use these IDs to make requests to the API.
+Once authenticated, check out the [`getUserInfo`](/app/account/user-info/) endpoint to get your user ID and vehicle ID. You can use these IDs to make requests to the API.
 
 ## What can you do?
 
