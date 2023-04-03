@@ -5,8 +5,9 @@ nav_order: 1
 
 # Unofficial Rivian API Documentation
 
-:bangbang: | WARNING: This information is not maintained by Rivian, and things could change or break at any moment. Use at your own risk.
-:---: | :---
+<div style="border: 1px solid #ffc107; background-color: #fff3cd; color: #856404; padding: 1em;">
+  <p><strong>WARNING:</strong> This information is not maintained by Rivian, and things could change or break at any moment. Use at your own risk.</p>
+</div>
 
 Most Rivian web APIs use GraphQL. Learn more about GraphQL [here](https://graphql.org/).
 

@@ -6,8 +6,9 @@ nav_order: 4
 
 # Hardware Teardown
 
-:bangbang: | WARNING: This information is not a substitute for a repair manual. If in doubt, take your vehicle to a certified repair shop or Rivian service center.
-:---: | :---
+<div style="border: 1px solid #ffc107; background-color: #fff3cd; color: #856404; padding: 1em;">
+  <p><strong>WARNING:</strong> This information is not a substitute for a repair manual. If in doubt, take your vehicle to a certified repair shop or Rivian service center.</p>
+</div>
 
 ## Overview
 
