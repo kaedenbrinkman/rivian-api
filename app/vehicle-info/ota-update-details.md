@@ -38,14 +38,10 @@ csrf-token: <your CSRF token>
 {
   "data": {
     "getVehicle": {
-      "availableOTAUpdateDetails": {
-        "url": "https://rivian.com/mobile/static/update-details/yUp3B144cthczZ6Y.pdf",
-        "version": "2023.06.02",
-        "locale": "en-US"
-      },
+      "availableOTAUpdateDetails": null,
       "currentOTAUpdateDetails": {
-        "url": "https://rivian.com/mobile/static/update-details/t0pwa-pJkP0aGkmj.pdf",
-        "version": "2023.02.03",
+        "url": "https://rivian.com/mobile/static/update-details/ExNUZJYaOKW9mobx.pdf",
+        "version": "2023.14.0",
         "locale": "en-US"
       }
     }

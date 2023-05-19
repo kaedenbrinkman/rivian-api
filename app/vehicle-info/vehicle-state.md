@@ -41,7 +41,382 @@ csrf-token: <your CSRF token>
   "data": {
     "vehicleState": {
       "__typename": "VehicleState",
-      ...
+      "gnssLocation": {
+        "latitude": <your-lat>,
+        "longitude": <your-lng>,
+        "timeStamp": "2023-05-19T05:27:38.018Z",
+        "isAuthorized": true
+      },
+      "alarmSoundStatus": {
+        "timeStamp": "2023-05-19T03:40:10.277Z",
+        "value": "false"
+      },
+      "timeToEndOfCharge": {
+        "timeStamp": "2023-05-19T05:23:33.538Z",
+        "value": 0
+      },
+      "doorFrontLeftLocked": {
+        "timeStamp": "2023-05-19T03:39:07.506Z",
+        "value": "locked"
+      },
+      "doorFrontLeftClosed": {
+        "timeStamp": "2023-05-19T03:39:07.506Z",
+        "value": "closed"
+      },
+      "doorFrontRightLocked": {
+        "timeStamp": "2023-05-19T03:39:07.506Z",
+        "value": "locked"
+      },
+      "doorFrontRightClosed": {
+        "timeStamp": "2023-05-19T03:39:07.506Z",
+        "value": "closed"
+      },
+      "doorRearLeftLocked": {
+        "timeStamp": "2023-05-19T03:39:07.506Z",
+        "value": "locked"
+      },
+      "doorRearLeftClosed": {
+        "timeStamp": "2023-05-19T03:39:07.506Z",
+        "value": "closed"
+      },
+      "doorRearRightLocked": {
+        "timeStamp": "2023-05-19T03:39:07.506Z",
+        "value": "locked"
+      },
+      "doorRearRightClosed": {
+        "timeStamp": "2023-05-19T03:39:07.506Z",
+        "value": "closed"
+      },
+      "windowFrontLeftClosed": {
+        "timeStamp": "2023-05-19T03:39:07.506Z",
+        "value": "closed"
+      },
+      "windowFrontRightClosed": {
+        "timeStamp": "2023-05-19T03:39:07.506Z",
+        "value": "closed"
+      },
+      "windowFrontLeftCalibrated": {
+        "timeStamp": "2023-05-19T03:39:07.506Z",
+        "value": "Calibrated"
+      },
+      "windowFrontRightCalibrated": {
+        "timeStamp": "2023-05-19T03:39:07.506Z",
+        "value": "Calibrated"
+      },
+      "windowRearLeftCalibrated": {
+        "timeStamp": "2023-05-19T03:39:07.506Z",
+        "value": "Calibrated"
+      },
+      "windowRearRightCalibrated": {
+        "timeStamp": "2023-05-19T03:39:07.506Z",
+        "value": "Calibrated"
+      },
+      "closureFrunkLocked": {
+        "timeStamp": "2023-05-19T03:39:07.506Z",
+        "value": "locked"
+      },
+      "closureFrunkClosed": {
+        "timeStamp": "2023-05-19T03:39:07.506Z",
+        "value": "closed"
+      },
+      "closureFrunkNextAction": {
+        "timeStamp": "2023-05-19T03:38:58.502Z",
+        "value": "Open_Allowed"
+      },
+      "gearGuardLocked": {
+        "timeStamp": "2023-05-19T03:39:07.506Z",
+        "value": "unlocked"
+      },
+      "closureLiftgateLocked": {
+        "timeStamp": "2023-05-19T03:39:07.506Z",
+        "value": "locked"
+      },
+      "closureLiftgateClosed": {
+        "timeStamp": "2023-05-19T03:39:07.506Z",
+        "value": "signal_not_available"
+      },
+      "closureLiftgateNextAction": {
+        "timeStamp": "2023-05-19T03:38:58.502Z",
+        "value": "SNA"
+      },
+      "windowRearLeftClosed": {
+        "timeStamp": "2023-05-19T03:39:07.506Z",
+        "value": "closed"
+      },
+      "windowRearRightClosed": {
+        "timeStamp": "2023-05-19T03:39:07.506Z",
+        "value": "closed"
+      },
+      "closureSideBinLeftLocked": {
+        "timeStamp": "2023-05-19T03:39:07.506Z",
+        "value": "locked"
+      },
+      "closureSideBinLeftClosed": {
+        "timeStamp": "2023-05-19T03:39:07.506Z",
+        "value": "closed"
+      },
+      "closureSideBinRightLocked": {
+        "timeStamp": "2023-05-19T03:39:07.506Z",
+        "value": "locked"
+      },
+      "closureSideBinRightClosed": {
+        "timeStamp": "2023-05-19T03:39:07.506Z",
+        "value": "closed"
+      },
+      "closureSideBinLeftNextAction": {
+        "timeStamp": "2023-05-19T03:38:58.502Z",
+        "value": "SNA"
+      },
+      "closureSideBinRightNextAction": {
+        "timeStamp": "2023-05-19T03:38:58.502Z",
+        "value": "SNA"
+      },
+      "closureTailgateLocked": {
+        "timeStamp": "2023-05-19T03:39:07.506Z",
+        "value": "locked"
+      },
+      "closureTailgateClosed": {
+        "timeStamp": "2023-05-19T03:39:07.506Z",
+        "value": "closed"
+      },
+      "closureTailgateNextAction": {
+        "timeStamp": "2023-05-19T03:38:58.502Z",
+        "value": "SNA"
+      },
+      "closureTonneauLocked": {
+        "timeStamp": "2023-05-19T03:39:07.506Z",
+        "value": "locked"
+      },
+      "closureTonneauClosed": {
+        "timeStamp": "2023-05-19T03:39:07.506Z",
+        "value": "reserved"
+      },
+      "wiperFluidState": {
+        "timeStamp": "2023-05-17T15:04:05.137Z",
+        "value": "normal"
+      },
+      "powerState": {
+        "timeStamp": "2023-05-19T05:27:14.532Z",
+        "value": "sleep"
+      },
+      "batteryHvThermalEventPropagation": {
+        "timeStamp": "2023-05-19T03:11:19.397Z",
+        "value": "nominal"
+      },
+      "vehicleMileage": {
+        "timeStamp": "2023-05-19T01:34:07.521Z",
+        "value": 14517537
+      },
+      "brakeFluidLow": null,
+      "gearStatus": {
+        "timeStamp": "2023-05-19T05:27:16.011Z",
+        "value": "park"
+      },
+      "tirePressureStatusFrontLeft": {
+        "timeStamp": "2023-05-19T03:39:01.306Z",
+        "value": "OK"
+      },
+      "tirePressureStatusValidFrontLeft": {
+        "timeStamp": "2023-05-19T03:39:01.306Z",
+        "value": "invalid"
+      },
+      "tirePressureStatusFrontRight": {
+        "timeStamp": "2023-05-19T03:39:01.306Z",
+        "value": "OK"
+      },
+      "tirePressureStatusValidFrontRight": {
+        "timeStamp": "2023-05-19T03:39:01.306Z",
+        "value": "invalid"
+      },
+      "tirePressureStatusRearLeft": {
+        "timeStamp": "2023-05-19T03:39:01.306Z",
+        "value": "OK"
+      },
+      "tirePressureStatusValidRearLeft": {
+        "timeStamp": "2023-05-19T03:39:01.306Z",
+        "value": "invalid"
+      },
+      "tirePressureStatusRearRight": {
+        "timeStamp": "2023-05-19T03:39:01.306Z",
+        "value": "OK"
+      },
+      "tirePressureStatusValidRearRight": {
+        "timeStamp": "2023-05-19T03:39:01.306Z",
+        "value": "invalid"
+      },
+      "batteryLevel": {
+        "timeStamp": "2023-05-19T05:09:07.853Z",
+        "value": 59.400002
+      },
+      "chargerState": {
+        "timeStamp": "2023-05-19T05:26:14.651Z",
+        "value": "charging_ready"
+      },
+      "batteryLimit": {
+        "timeStamp": "2023-05-19T02:13:50.974Z",
+        "value": 70
+      },
+      "remoteChargingAvailable": {
+        "timeStamp": "2023-05-19T02:13:50.974Z",
+        "value": 0
+      },
+      "batteryHvThermalEvent": {
+        "timeStamp": "2023-05-19T03:11:17.505Z",
+        "value": "off"
+      },
+      "rangeThreshold": {
+        "timeStamp": "2023-05-19T05:10:39.844Z",
+        "value": "vehicle_range_normal"
+      },
+      "distanceToEmpty": {
+        "timeStamp": "2023-05-19T05:10:39.844Z",
+        "value": 307
+      },
+      "otaAvailableVersionGitHash": {
+        "timeStamp": "2023-05-03T05:12:17.214Z",
+        "value": ""
+      },
+      "otaAvailableVersionNumber": {
+        "timeStamp": "2023-05-03T05:12:17.214Z",
+        "value": 0
+      },
+      "otaAvailableVersionWeek": {
+        "timeStamp": "2023-05-03T05:12:17.214Z",
+        "value": 0
+      },
+      "otaAvailableVersionYear": {
+        "timeStamp": "2023-05-03T05:12:17.214Z",
+        "value": 0
+      },
+      "otaCurrentVersionGitHash": {
+        "timeStamp": "2023-05-03T05:12:17.214Z",
+        "value": "9804525e"
+      },
+      "otaCurrentVersionNumber": {
+        "timeStamp": "2023-05-03T05:12:17.214Z",
+        "value": 0
+      },
+      "otaCurrentVersionWeek": {
+        "timeStamp": "2023-05-03T05:12:17.214Z",
+        "value": 14
+      },
+      "otaCurrentVersionYear": {
+        "timeStamp": "2023-05-03T05:12:17.214Z",
+        "value": 2023
+      },
+      "otaDownloadProgress": {
+        "timeStamp": "2023-05-03T05:12:17.214Z",
+        "value": 0
+      },
+      "otaInstallDuration": {
+        "timeStamp": "2023-05-03T05:12:17.214Z",
+        "value": 0
+      },
+      "otaInstallProgress": {
+        "timeStamp": "2023-05-03T05:12:17.214Z",
+        "value": 0
+      },
+      "otaInstallReady": {
+        "timeStamp": "2023-05-19T03:11:18.264Z",
+        "value": "ota_available"
+      },
+      "otaInstallTime": {
+        "timeStamp": "2023-05-03T05:12:17.214Z",
+        "value": 0
+      },
+      "otaInstallType": {
+        "timeStamp": "2023-05-03T05:12:17.214Z",
+        "value": "Convenience"
+      },
+      "otaStatus": {
+        "timeStamp": "2023-05-03T05:12:17.214Z",
+        "value": "Idle"
+      },
+      "otaCurrentStatus": {
+        "timeStamp": "2023-05-03T05:12:17.214Z",
+        "value": "Install_Success"
+      },
+      "cabinClimateInteriorTemperature": {
+        "timeStamp": "2023-05-19T03:39:07.823Z",
+        "value": 24
+      },
+      "cabinPreconditioningStatus": {
+        "timeStamp": "2023-05-19T03:39:08.206Z",
+        "value": "undefined"
+      },
+      "cabinPreconditioningType": {
+        "timeStamp": "2023-05-19T03:39:08.206Z",
+        "value": "NONE"
+      },
+      "petModeStatus": {
+        "timeStamp": "2023-05-19T03:11:20.899Z",
+        "value": "Off"
+      },
+      "petModeTemperatureStatus": {
+        "timeStamp": "2023-05-19T03:11:20.899Z",
+        "value": "Default"
+      },
+      "cabinClimateDriverTemperature": {
+        "timeStamp": "2023-05-19T03:39:07.823Z",
+        "value": 22
+      },
+      "gearGuardVideoStatus": {
+        "timeStamp": "2023-05-19T01:21:17.963Z",
+        "value": "Enabled"
+      },
+      "gearGuardVideoMode": {
+        "timeStamp": "2023-05-19T01:21:17.963Z",
+        "value": "Away_From_Home"
+      },
+      "gearGuardVideoTermsAccepted": {
+        "timeStamp": "2023-05-19T01:21:17.963Z",
+        "value": "true"
+      },
+      "defrostDefogStatus": {
+        "timeStamp": "2023-05-19T03:39:07.823Z",
+        "value": "Off"
+      },
+      "steeringWheelHeat": {
+        "timeStamp": "2023-05-19T03:39:07.823Z",
+        "value": "Off"
+      },
+      "seatFrontLeftHeat": {
+        "timeStamp": "2023-05-19T03:39:07.823Z",
+        "value": "Off"
+      },
+      "seatFrontRightHeat": {
+        "timeStamp": "2023-05-19T03:39:07.823Z",
+        "value": "Off"
+      },
+      "seatRearLeftHeat": {
+        "timeStamp": "2023-05-19T03:39:07.823Z",
+        "value": "Off"
+      },
+      "seatRearRightHeat": {
+        "timeStamp": "2023-05-19T03:39:07.823Z",
+        "value": "Off"
+      },
+      "chargerStatus": {
+        "timeStamp": "2023-05-17T14:55:05.011Z",
+        "value": "chrgr_sts_not_connected"
+      },
+      "seatFrontLeftVent": {
+        "timeStamp": "2023-05-19T03:39:07.823Z",
+        "value": "Off"
+      },
+      "seatFrontRightVent": {
+        "timeStamp": "2023-05-19T03:39:07.823Z",
+        "value": "Off"
+      },
+      "chargerDerateStatus": null,
+      "driveMode": {
+        "timeStamp": "2023-05-19T03:12:20.629Z",
+        "value": "everyday"
+      },
+      "serviceMode": {
+        "timeStamp": "2023-05-19T03:11:18.355Z",
+        "value": "off"
+      }
     }
   }
 }

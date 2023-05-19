@@ -25,5 +25,3 @@ This section contains endpoints related to accessing your Rivian account. You ca
 - [`getUserInfo`](/app/account/user-info) - get user information
 - [`user`](/app/account/user) - get user information for orders
 - [`paymentMethods`](/app/account/payment-methods) - get user payment methods
-- [`CheckByRivianId`](/app/account/check-by-rivian-id) - shows third-party accounts linked to your Rivian account
-- [`getLinkedEmailForRivianId`](/app/account/get-linked-email-for-rivian-id) - shows email addresses for third-party accounts linked to your Rivian account
