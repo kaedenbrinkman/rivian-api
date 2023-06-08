@@ -22,11 +22,9 @@ The `getLiveSessionData` gets live charging session information for a vehicle.
 {
   "operationName": "getLiveSessionData",
   "variables": {
-    "vehicleId": <your-vehicle-id>,
-    "transactionId": <charging-transaction-id>,
-    "chargerId": <charger-id>,
+    "vehicleId": <your-vehicle-id>
     },
-  "query": "query getLiveSessionData($vehicleId: ID, $transactionId: ID, $chargerId: ID) { getLiveSessionData(vehicleId: $vehicleId, transactionId: $transactionId, chargerId: $chargerId) { isRivianCharger isFreeSession vehicleChargerState { value updatedAt } chargerId startTime timeElapsed timeRemaining { value updatedAt } kilometersChargedPerHour { value updatedAt } power { value updatedAt } rangeAddedThisSession { value updatedAt } totalChargedEnergy { value updatedAt } timeRemaining { value updatedAt } vehicleChargerState { value updatedAt } kilometersChargedPerHour { value updatedAt } currentPrice } }"
+  "query": "query getLiveSessionData($vehicleId: ID) { getLiveSessionData(vehicleId: $vehicleId) { isRivianCharger isFreeSession vehicleChargerState { value updatedAt } chargerId startTime timeElapsed timeRemaining { value updatedAt } kilometersChargedPerHour { value updatedAt } power { value updatedAt } rangeAddedThisSession { value updatedAt } totalChargedEnergy { value updatedAt } timeRemaining { value updatedAt } vehicleChargerState { value updatedAt } kilometersChargedPerHour { value updatedAt } currentPrice } }"
 }
 ```
 
@@ -40,16 +38,31 @@ The `getLiveSessionData` gets live charging session information for a vehicle.
          "isFreeSession":false,
          "vehicleChargerState":{
             "value":"charging_active",
-            "updatedAt":"2023-06-08T01:49:28.899Z"
+            "updatedAt":"2023-06-08T22:53:20.578Z"
          },
          "chargerId":"USCPIL13538041",
-         "startTime":"2023-06-08T01:49:28.88888Z",
-         "timeElapsed":"64845",
-         "timeRemaining":"None",
-         "kilometersChargedPerHour":"None",
-         "power":"None",
-         "rangeAddedThisSession":"None",
-         "totalChargedEnergy":"None",
+         "startTime":"2023-06-08T20:03:49.021983Z",
+         "timeElapsed":"10236",
+         "timeRemaining":{
+            "value":"4070",
+            "updatedAt":"2023-06-08T22:54:15.072Z"
+         },
+         "kilometersChargedPerHour":{
+            "value":31,
+            "updatedAt":"2023-06-08T22:54:07.781Z"
+         },
+         "power":{
+            "value":10,
+            "updatedAt":"2023-06-08T22:53:20.578Z"
+         },
+         "rangeAddedThisSession":{
+            "value":90,
+            "updatedAt":"2023-06-08T22:54:07.781Z"
+         },
+         "totalChargedEnergy":{
+            "value":25,
+            "updatedAt":"2023-06-08T22:53:20.578Z"
+         },
          "currentPrice":0
       }
    }
