@@ -21,3 +21,4 @@ These endpoints return information about the vehicle.
 - [`GetVehicleLastConnection`](/app/vehicle-info/vehicle-last-connection) - get the last time your vehicle synced to Rivian Cloud
 - [`GetVehicleState`](/app/vehicle-info/vehicle-state) - get vehicle state information
 - [`GetVehicle`](/app/vehicle-info/vehicle) - get information about vehicle keys and drivers
+- [`SetVehicleName`](/app/vehicle-info/set-vehicle-name) - set your vehicle name

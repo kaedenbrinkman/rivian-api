@@ -20,7 +20,6 @@ This section contains endpoints related to charging your vehicle.
 - [`updateWallbox`](/app/charging/update-wallbox) - update your wallbox name
 - [`CheckByRivianId`](/app/charging/check-by-rivian-id) - shows third-party accounts linked to your Rivian account
 - [`getLinkedEmailForRivianId`](/app/charging/get-linked-email-for-rivian-id) - shows email addresses for third-party accounts linked to your Rivian account
-- [`SetVehicleName`](/app/charging/set-vehicle-name) - set your vehicle name
 - [`getLiveSessionData`](/app/charging/get-live-session-data) - Get live charging session data
 - [`getLiveSessionHistory`](/app/charging/get-live-session-history) - Get live charging session history data
 - [`getNonRivianUserSession`](/app/charging/get-non-rivian-user-session) - Get non rivian charging session data
