@@ -17,14 +17,8 @@ This section contains information about the endpoints that the Rivian mobile app
 ## Vehicle BLE API
 The BLE API is used by the mobile app and keyfob. It supports the same controls found in the app API, but sends the commands directly to the vehicle over BLE instead of over the internet. See [Vehicle BLE API](/ble) for more information.
 
-## Vehicle CAN API
-Inside the car, components communicate with one another on a CAN network. By listening to them, you can collect detailed information about the vehicle. R1 vehicles have a lot of separate CAN busses. See [Vehicle CAN API](/can) for more information.
-
 ## Configurator Image API
 The official website has an API for displaying images of different R1 configurations. See [Configurator API](/configurator/) for more information.
-
-## Hardware Teardown
-Interested in repairing your vehicle? This is a page for resources and tips. See [Hardware Teardown](/teardown/) for more information.
 
 ## Contributing
 To contribute, submit a pull request to the [GitHub repository](https://github.com/kaedenbrinkman/rivian-api).
