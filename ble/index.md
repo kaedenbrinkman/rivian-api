@@ -18,7 +18,7 @@ These commands mirror the internet-based commands in the [`sendVehicleCommand`](
 - Rivian Sensor 2: For sensing the proximity of BLE keys
 - Rivian Sensor 3: For sensing the proximity of BLE keys
 - Rivian Sensor 4: For sensing the proximity of BLE keys
-- RIVN: Unknown
+- RIVN: The key fob. Seems to use this API too.
 - Rivian Phone Key: For communicating with the vehicle to perform commands
 - Rivian Audio: For playing music / taking calls in the vehicle
 - Rivian Camp Speaker: For playing music / taking calls on the camp speaker
