@@ -32,10 +32,11 @@ csrf-token: <your CSRF token>
       "locale": "en_US",
       "token": <your-push-token>,
       "type": "FCM",
-      "userId": <your-user-id>
+      "userId": <your-user-id>,
+      "mobileApp": "CONSUMER_RELEASE"
     }
   },
-  "query": "mutation RegisterPushNotificationToken($data: RegistrationInput!) { registerPushNotificationToken(data: $data) { __typename deviceTokenId locale success token } }"
+  "query": "mutation RegisterPushNotificationToken($data: RegistrationInput!) { registerPushNotificationToken(data: $data) { deviceTokenId locale success token } }"
 }
 ```
 
@@ -45,7 +46,6 @@ csrf-token: <your CSRF token>
 {
   "data": {
     "registerPushNotificationToken": {
-      "__typename": "RegistrationResponse",
       "deviceTokenId": <your-device-token-id>,
       "locale": "en_US",
       "success": true,

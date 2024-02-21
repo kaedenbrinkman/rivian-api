@@ -15,6 +15,7 @@ There are four main GraphQL endpoints:
 - `https://rivian.com/api/gql/gateway/graphql` (vehicle info, controls, etc.)
 - `https://rivian.com/api/gql/chrg/user/graphql` (charging)
 - `https://rivian.com/api/gql/t2d/graphql` (payments)
+- `https://rivian.com/api/gql/content/graphql/` (web content)
 
 ## Authentication
 
@@ -30,4 +31,5 @@ Once authenticated, check out the [`getUserInfo`](/app/account/user-info/) endpo
 - [`Charging`](/app/charging): view the status of your wallbox and charging sessions.
 - [`Controls`](/app/controls): lock/unlock your vehicle, share a location to your vehicle, plan a trip, and more.
 - [`Vehicle Information`](/app/vehicle-info): view your vehicle's VIN, state of charge, odometer, location, OTA update release notes, and more.
+- [`Trip Planning`](/app/trip-planning): plan a trip, save a trip, and view your saved trips
 - [`Gear Shop`](/app/gear-shop): view product details and their pricing

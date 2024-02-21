@@ -40,7 +40,7 @@ csrf-token: <your CSRF token>
     "getVehicle": {
       "availableOTAUpdateDetails": null,
       "currentOTAUpdateDetails": {
-        "url": "https://rivian.com/mobile/static/update-details/ExNUZJYaOKW9mobx.pdf",
+        "url": "https://dc-service-prod-techpubs-r1-docs.s3.us-east-1.amazonaws.com/Vehicle/R1T/UpdateDetails/20240302/PDF-digital/US/en-US/update-details-20240302.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=...",
         "version": "2023.14.0",
         "locale": "en-US"
       }

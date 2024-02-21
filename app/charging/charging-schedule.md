@@ -10,7 +10,7 @@ nav_order: 3
 
 ## Overview
 
-The charging schedule API allows the user to get/set a charge schedule including location and amperage. 
+The charging schedule endpoint allows the user to get/set a charge schedule including location and amperage.
 
 ### Required Headers
 
@@ -22,7 +22,7 @@ csrf-token: <your CSRF token>
 
 `POST https://rivian.com/api/gql/gateway/graphql`
 
-### Request Body to set a charging schedule
+### Set Charging Schedule
 
 ```json
 {
@@ -49,17 +49,29 @@ csrf-token: <your CSRF token>
 
 ```json
 {
-    "data": {
-        "setChargingSchedules": {
-            "success": true
+  "data": {
+    "getVehicle": {
+      "chargingSchedules": [
+        {
+          "startTime": 210,
+          "duration": 210,
+          "location": {
+            "latitude": <lat>,
+            "longitude": <lng>
+          },
+          "amperage": 48,
+          "enabled": false,
+          "weekDays": []
         }
+      ]
     }
+  }
 }
 ```
 
 `POST https://rivian.com/api/gql/gateway/graphql`
 
-### Request Body to get the charging schedule
+### Get the Charging Schedule
 
 ```json
 {
