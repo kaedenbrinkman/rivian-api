@@ -38,26 +38,21 @@ csrf-token: <your CSRF token>
 {
   "data": {
     "orders": {
-      "__typename": "OrderSearch",
       "data": [
         {
-          "__typename": "Order",
           "id": <your-order-id>,
           "state": "ORDERED",
           "configurationStatus": "SOFT_LOCKED",
           "fulfillmentSummaryStatus": "VEHICLE_DELIVERED",
           "items": [
             {
-              "__typename": "OrderItem",
               "sku": <wallbox-model>
             },
             {
-              "__typename": "OrderItem",
               "sku": <vehicle-model>
             }
           ],
           "consumerStatuses": {
-            "__typename": "ConsumerVehicleStatuses",
             "isConsumerFlowComplete": true
           }
         }
