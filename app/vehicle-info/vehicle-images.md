@@ -34,10 +34,12 @@ dc-cid: m-android
   "variables": {
     "extension": "png",
     "resolution": "@3x",
-    "vehicleVersion": "3"
+    "vehicleVersion": "<your vehicle version>"
   }
 }
 ```
+For ```vehicleVersion``` try numbers 1-5.
+
 
 ### Example Response
 
