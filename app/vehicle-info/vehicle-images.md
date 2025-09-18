@@ -22,18 +22,20 @@ If you are just looking for the images from the configurator, see [Configurator 
 a-sess: <your app session token>
 u-sess: <your user session token>
 csrf-token: <your CSRF token>
+dc-cid: m-android
 ```
 
 ### Request Body
 
 ```json
 {
-  "operationName": "getVehicleImages",
+  "operationName": "GetVehicleImages",
+  "query": "query GetVehicleImages($extension: String!, $resolution: String!, $vehicleVersion: String!) { getVehicleOrderMobileImages( resolution: $resolution extension: $extension version: $vehicleVersion ) { __typename orderId url resolution size design placement } getVehicleMobileImages( resolution: $resolution extension: $extension version: $vehicleVersion ) { __typename vehicleId url resolution size design placement overlays { __typename url overlay zIndex } } }",
   "variables": {
-    "extension": "webp",
-    "resolution": "hdpi"
-  },
-  "query": "query getVehicleImages($extension: String!, $resolution: String!) { getVehicleOrderMobileImages(resolution: $resolution, extension: $extension) { __typename orderId url resolution size design placement } getVehicleMobileImages(resolution: $resolution, extension: $extension) { __typename vehicleId url resolution size design placement } }"
+    "extension": "png",
+    "resolution": "@3x",
+    "vehicleVersion": "3"
+  }
 }
 ```
 
