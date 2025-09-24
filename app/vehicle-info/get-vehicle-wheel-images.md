@@ -19,7 +19,7 @@ Make a GET request to:
 https://rivian.com/mobile/static/img/v1/features/wheels/<your wheel option>.png
 ```
 
-`<your wheel option> can be found in the getUserInfo response as wheelOption.optionId`
+`<your wheel option> can be found in the CurrentUserForLogin response as wheelOption.optionId`
 
 An example option ID is `WHL-0AS`
 
