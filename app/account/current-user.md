@@ -20,7 +20,7 @@ The `CurrentUserForLogin` endpoint returns information about the configuration a
 {
   "operationName": "CurrentUserForLogin",
   "variables": {},
-  "query": "query CurrentUserForLogin { currentUser { __typename ...CurrentUserFields } }  fragment CurrentUserFields on User { id settings { distanceUnit { value timestamp } temperatureUnit { value timestamp } } firstName lastName email address { country } vehicles { id owner roles vin vas { vasVehicleId vehiclePublicKey } vehicle { deviceSlots { phone { max free } } model mobileConfiguration { trimOption { optionId optionName } exteriorColorOption { optionId optionName } interiorColorOption { optionId optionName } driveSystemOption { optionId optionName } tonneauOption { optionId optionName } wheelOption { optionId optionName } driveSystemTowingDriveModes driveSystemDriveModes maxVehiclePower } maintenanceSchedule { sections { items { description isDue } serviceLifetime { __typename ... on MaintenanceDistanceLimit { km mi } ... on MaintenanceDateLimit { year } } } } } settings { name { value } } } enrolledPhones { vas { vasPhoneId publicKey } enrolled { deviceType deviceName vehicleId identityId shortName } } pendingInvites { id invitedByFirstName role status vehicleId vehicleModel email } }"
+  "query": "query CurrentUserForLogin{currentUser{__typename...CurrentUserFields}}fragment CurrentUserFields on User{id settings{distanceUnit{value timestamp}temperatureUnit{value timestamp}pressureUnit{__typename value timestamp}locationSharingConsent{__typename consent timestamp expiry}}firstName lastName email address{country}vehicles{id owner roles vin vas{vasVehicleId vehiclePublicKey}vehicle{deviceSlots{phone{max free}}model modelYear mobileConfiguration{__typename trimOption{__typename optionId optionName}exteriorColorOption{__typename optionId optionName}interiorColorOption{__typename optionId optionName}driveSystemOption{__typename optionId optionName}tonneauOption{__typename optionId optionName}wheelOption{__typename optionId optionName}driveSystemDriveModes driveSystemTowingDriveModes maxVehiclePower chargePort}cccCapable cccReady cccEnabled legacyEnabled locationConsentRequest{__typename requesterName recipientName id timestamp}maintenanceSchedule{sections{items{description isDue}serviceLifetime{__typename...on MaintenanceDistanceLimit{km mi}...on MaintenanceDateLimit{year}}}}}settings{name{value}}}enrolledPhones{vas{vasPhoneId publicKey}enrolled{deviceType deviceName vehicleId identityId shortName}}pendingInvites{id invitedByFirstName role status vehicleId vehicleModel email}address{__typename id types line1 line2 city state postalCode country}userAddresses:backwardsCompatibleAddresses{__typename id types line1 line2 city state postalCode country}}"
 }
 ```
 
@@ -34,7 +34,9 @@ The `CurrentUserForLogin` endpoint returns information about the configuration a
       "id": <user-id>,
       "settings": {
         "distanceUnit": null,
-        "temperatureUnit": null
+        "temperatureUnit": null,
+       "pressureUnit": null,
+        "locationSharingConsent": null
       },
       "firstName": <first-name>,
       "lastName": <last-name>,
@@ -62,6 +64,7 @@ The `CurrentUserForLogin` endpoint returns information about the configuration a
               }
             },
             "model": "R1T",
+            "modelYear": 2023,
             "mobileConfiguration": {
               "trimOption": {
                 "optionId": "PKG-ADV",
@@ -103,8 +106,14 @@ The `CurrentUserForLogin` endpoint returns information about the configuration a
                 "off_road_sport_drift",
                 "off_road_sand"
               ],
-              "maxVehiclePower": 215
+              "maxVehiclePower": 215,
+              "chargePort": "CCS"
             },
+            "cccCapable": true,
+            "cccReady": false,
+            "cccEnabled": false,
+            "legacyEnabled": true,
+            "locationConsentRequest": null,
             "maintenanceSchedule": {
               "sections": [
                 {
@@ -180,8 +189,25 @@ The `CurrentUserForLogin` endpoint returns information about the configuration a
           ]
         }
       ],
-      "pendingInvites": []
+      "pendingInvites": [],
+      "userAddresses": [
+        {
+            "__typename": "UserAddress",
+            "id": "<id>",
+            "types": [
+                "PRIMARY",
+                "SHIPPING"
+            ],
+            "line1": "<address line 1>",
+            "line2": "<address line 2>",
+            "city": "<city>",
+            "state": "<state abbreviation e.g. CA>",
+            "postalCode": "<post code>",
+            "country": "<country abbreviation e.g. US>"
+        }
+    ]
     }
   }
 }
 ```
+
