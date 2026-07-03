@@ -23,5 +23,9 @@ This section contains endpoints related to accessing your Rivian account. You ca
 - [`GetProvisionedCampSpeakers`](/app/account/provisioned-camp-speakers) - list camp speakers in your account
 - [`getRegisteredWallboxes`](/app/account/registered-wallboxes) - list Rivian Chargers in your account
 - [`getUserInfo`](/app/account/user-info) - get user information
+- [`CurrentUser`](/app/account/current-user) - get user profile and settings
 - [`user`](/app/account/user) - get user information for orders
 - [`paymentMethods`](/app/account/payment-methods) - get user payment methods
+- [`User PIN`](/app/account/user-pin) - lock your in-vehicle driver profile (assistant, calendar, media)
+- [`Logout`](/app/account/logout) - end the current session
+- [`CurrentUserForLogin`](/app/account/current-user-for-login) - load user profile after login

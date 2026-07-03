@@ -1,26 +1,35 @@
 ---
-title: CurrentUserForLogin
+title: CurrentUser
 parent: Account Endpoints
 grand_parent: App API
 has_children: false
-nav_order: 3
+nav_order: 4
 ---
 
-# CurrentUserForLogin
+# CurrentUser
 
 ## Overview
 
-The `CurrentUserForLogin` endpoint returns information about the configuration and options for the vehicles in your account.
+The `CurrentUser` query returns the logged-in user's profile and settings. It uses the same fields as [`CurrentUserForLogin`](/app/account/current-user-for-login) and is called throughout the app to refresh units, contact info, and preferences.
 
 `POST https://rivian.com/api/gql/gateway/graphql`
+
+### Required Headers
+
+```text
+a-sess: <your app session token>
+u-sess: <your user session token>
+csrf-token: <your CSRF token>
+apollographql-client-name: com.rivian.android.consumer
+```
 
 ### Request Body
 
 ```json
 {
-  "operationName": "CurrentUserForLogin",
+  "operationName": "CurrentUser",
   "variables": {},
-  "query": "query CurrentUserForLogin{currentUser{__typename...CurrentUserFields}}fragment CurrentUserFields on User{id settings{distanceUnit{value timestamp}temperatureUnit{value timestamp}pressureUnit{__typename value timestamp}locationSharingConsent{__typename consent timestamp expiry}}firstName lastName email address{country}vehicles{id owner roles vin vas{vasVehicleId vehiclePublicKey}vehicle{deviceSlots{phone{max free}}model modelYear mobileConfiguration{__typename trimOption{__typename optionId optionName}exteriorColorOption{__typename optionId optionName}interiorColorOption{__typename optionId optionName}driveSystemOption{__typename optionId optionName}tonneauOption{__typename optionId optionName}wheelOption{__typename optionId optionName}driveSystemDriveModes driveSystemTowingDriveModes maxVehiclePower chargePort}cccCapable cccReady cccEnabled legacyEnabled locationConsentRequest{__typename requesterName recipientName id timestamp}maintenanceSchedule{sections{items{description isDue}serviceLifetime{__typename...on MaintenanceDistanceLimit{km mi}...on MaintenanceDateLimit{year}}}}}settings{name{value}}}enrolledPhones{vas{vasPhoneId publicKey}enrolled{deviceType deviceName vehicleId identityId shortName}}pendingInvites{id invitedByFirstName role status vehicleId vehicleModel email}address{__typename id types line1 line2 city state postalCode country}userAddresses:backwardsCompatibleAddresses{__typename id types line1 line2 city state postalCode country}}"
+  "query": "query CurrentUser { currentUser { __typename ...CurrentUserFields } }  fragment CurrentUserFields on User { id settings { distanceUnit { value timestamp } temperatureUnit { value timestamp } pressureUnit { value timestamp } locationSharingConsent { consent expiry timestamp } } firstName lastName email emailVerified primaryPhone { phone countryCode national formatted } address { id types line1 line2 city state postalCode country state } hasNewsletterSubscription hasSmsSubscription hasNewsletterSmsSubscription registrationChannels { type } }"
 }
 ```
 
@@ -31,183 +40,38 @@ The `CurrentUserForLogin` endpoint returns information about the configuration a
   "data": {
     "currentUser": {
       "__typename": "User",
-      "id": <user-id>,
+      "id": "<your-user-id>",
       "settings": {
-        "distanceUnit": null,
-        "temperatureUnit": null,
-       "pressureUnit": null,
-        "locationSharingConsent": null
+        "distanceUnit": { "value": "Imperial", "timestamp": 1700000000000 },
+        "temperatureUnit": { "value": "Fahrenheit", "timestamp": 1700000000000 },
+        "pressureUnit": { "value": "Psi", "timestamp": 1700000000000 },
+        "locationSharingConsent": { "consent": true, "expiry": null, "timestamp": 1700000000000 }
       },
-      "firstName": <first-name>,
-      "lastName": <last-name>,
-      "email": <email>,
+      "firstName": "<first-name>",
+      "lastName": "<last-name>",
+      "email": "<email>",
+      "emailVerified": true,
+      "primaryPhone": {
+        "phone": "<phone>",
+        "countryCode": "US",
+        "national": "<formatted-national>",
+        "formatted": "<formatted-international>"
+      },
       "address": {
+        "id": "<address-id>",
+        "types": ["PRIMARY"],
+        "line1": "<street>",
+        "line2": "",
+        "city": "<city>",
+        "state": "<state>",
+        "postalCode": "<postal-code>",
         "country": "US"
       },
-      "vehicles": [
-        {
-          "id": <vehicle-id>,
-          "owner": null,
-          "roles": [
-            "primary-owner"
-          ],
-          "vin": <vin>,
-          "vas": {
-            "vasVehicleId": <vas-vehicle-id>,
-            "vehiclePublicKey": <vehicle-public-key>
-          },
-          "vehicle": {
-            "deviceSlots": {
-              "phone": {
-                "max": 4,
-                "free": 0
-              }
-            },
-            "model": "R1T",
-            "modelYear": 2023,
-            "mobileConfiguration": {
-              "trimOption": {
-                "optionId": "PKG-ADV",
-                "optionName": "Adventure Package"
-              },
-              "exteriorColorOption": {
-                "optionId": "EXP-CYL",
-                "optionName": "Compass Yellow"
-              },
-              "interiorColorOption": {
-                "optionId": "INT-BMP",
-                "optionName": "Black Mountain"
-              },
-              "driveSystemOption": {
-                "optionId": "MOT-401",
-                "optionName": "Quad-Motor AWD"
-              },
-              "tonneauOption": {
-                "optionId": "TON-P01",
-                "optionName": "Powered Tonneau Cover"
-              },
-              "wheelOption": {
-                "optionId": "WHL-0AD",
-                "optionName": "20\" All-Terrain Dark"
-              },
-              "driveSystemTowingDriveModes": [
-                "everyday",
-                "off_road_auto",
-                "winter"
-              ],
-              "driveSystemDriveModes": [
-                "everyday",
-                "off_road_auto",
-                "winter",
-                "sport",
-                "distance",
-                "off_road_rocks",
-                "off_road_sport_auto",
-                "off_road_sport_drift",
-                "off_road_sand"
-              ],
-              "maxVehiclePower": 215,
-              "chargePort": "CCS"
-            },
-            "cccCapable": true,
-            "cccReady": false,
-            "cccEnabled": false,
-            "legacyEnabled": true,
-            "locationConsentRequest": null,
-            "maintenanceSchedule": {
-              "sections": [
-                {
-                  "items": [
-                    {
-                      "description": "Tire rotation",
-                      "isDue": null
-                    },
-                    {
-                      "description": "Multi-point inspection",
-                      "isDue": null
-                    }
-                  ],
-                  "serviceLifetime": {
-                    "__typename": "MaintenanceDistanceLimit",
-                    "km": 12000,
-                    "mi": 7500
-                  }
-                },
-                {
-                  "items": [
-                    {
-                      "description": "Brake fluid flush",
-                      "isDue": false
-                    }
-                  ],
-                  "serviceLifetime": {
-                    "__typename": "MaintenanceDateLimit",
-                    "year": 3
-                  }
-                },
-                {
-                  "items": [
-                    {
-                      "description": "Coolant change",
-                      "isDue": null
-                    },
-                    {
-                      "description": "Drive unit fluid change (Quad-Motor AWD vehicles only)",
-                      "isDue": null
-                    }
-                  ],
-                  "serviceLifetime": {
-                    "__typename": "MaintenanceDistanceLimit",
-                    "km": 180000,
-                    "mi": 112500
-                  }
-                }
-              ]
-            }
-          },
-          "settings": {
-            "name": {
-              "value": "R1T"
-            }
-          }
-        }
-      ],
-      "enrolledPhones": [
-        {
-          "vas": {
-            "vasPhoneId": <vas-phone-id>,
-            "publicKey": <vas-phone-public-key>
-          },
-          "enrolled": [
-            {
-              "deviceType": "phone/rivian",
-              "deviceName": <phone-name>,
-              "vehicleId": <vehicle-id>,
-              "identityId": <phone-id>,
-              "shortName": ""
-            }
-          ]
-        }
-      ],
-      "pendingInvites": [],
-      "userAddresses": [
-        {
-            "__typename": "UserAddress",
-            "id": "<id>",
-            "types": [
-                "PRIMARY",
-                "SHIPPING"
-            ],
-            "line1": "<address line 1>",
-            "line2": "<address line 2>",
-            "city": "<city>",
-            "state": "<state abbreviation e.g. CA>",
-            "postalCode": "<post code>",
-            "country": "<country abbreviation e.g. US>"
-        }
-    ]
+      "hasNewsletterSubscription": true,
+      "hasSmsSubscription": true,
+      "hasNewsletterSmsSubscription": false,
+      "registrationChannels": [{ "type": "TEXT" }]
     }
   }
 }
 ```
-

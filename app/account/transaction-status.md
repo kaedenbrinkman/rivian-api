@@ -153,7 +153,7 @@ The `transactionStatus` shows transaction details (steps)
               {
                 "status": "NO_PAYMENT_SUBMITTED",
                 "paymentMethod": null,
-                "timestamp": "<timestamp>"
+                "timestamp": 1700000000000
               }
             ]
           }

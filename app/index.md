@@ -8,28 +8,31 @@ nav_order: 2
 
 ## Overview
 
-This section contains endpoints from the official Rivian Mobile App API. The API is used by the Rivian Mobile App to communicate with the vehicle. Using the API, you can get information about the vehicle, send commands to the vehicle, and receive notifications from the vehicle.
+This section documents the Rivian Mobile App API. The API is used by the official app to communicate with vehicles: live telemetry, remote commands, charging, account data, and more.
 
-There are four main GraphQL endpoints:
-- `https://rivian.com/api/gql/orders/graphql` (orders, gear shop, etc.)
-- `https://rivian.com/api/gql/gateway/graphql` (vehicle info, controls, etc.)
-- `https://rivian.com/api/gql/chrg/user/graphql` (charging)
-- `https://rivian.com/api/gql/t2d/graphql` (payments)
-- `https://rivian.com/api/gql/content/graphql/` (web content)
+Main GraphQL HTTP endpoints:
+
+- `https://rivian.com/api/gql/orders/graphql` — orders, gear shop
+- `https://rivian.com/api/gql/gateway/graphql` — vehicle info, legacy controls, Parallax mutations
+- `https://rivian.com/api/gql/chrg/user/graphql` — wallbox, public charging, session history
+- `https://rivian.com/api/gql/t2d/graphql` — payments
+
+Live data also uses WebSocket:
+
+- `wss://api.rivian.com/gql-consumer-subscriptions/graphql` — [Parallax](/app/parallax) protobuf streams and [legacy JSON subscriptions](/app/legacy/websocket-subscriptions)
 
 ## Authentication
 
-See [Authentication](/app/authentication) for more information.
+See [Authentication](/app/authentication).
 
 ## Getting started
 
-Once authenticated, check out the [`getUserInfo`](/app/account/user-info/) endpoint to get your user ID and vehicle ID. You can use these IDs to make requests to the API.
+Once authenticated, use [`getUserInfo`](/app/account/user-info/) for your user ID and vehicle IDs.
 
-## What can you do?
+## Documentation
 
-- [`Account Information`](/app/account): view your orders, connected accounts, payment methods, linked products, and personal info.
-- [`Charging`](/app/charging): view the status of your wallbox and charging sessions.
-- [`Controls`](/app/controls): lock/unlock your vehicle, share a location to your vehicle, plan a trip, and more.
-- [`Vehicle Information`](/app/vehicle-info): view your vehicle's VIN, state of charge, odometer, location, OTA update release notes, and more.
-- [`Trip Planning`](/app/trip-planning): plan a trip, save a trip, and view your saved trips
-- [`Gear Shop`](/app/gear-shop): view product details and their pricing
+- [**Parallax**](/app/parallax) — live protobuf vehicle streams by domain, decoding notes, and `sendParallaxPayload` commands
+- [**Feature flags**](/app/feature-flags) — Firebase app remote config + per-vehicle `SupportedFeatures` gating (including Parallax)
+- [**Legacy**](/app/legacy) — typed JSON `GetVehicleState`, HMAC `sendVehicleCommand`, wallbox/charging HTTP, and non-Parallax WebSocket subscriptions
+- [**Account**](/app/account) — orders, payment methods, linked products, personal info
+- [**Gear Shop**](/app/gear-shop) — product details and pricing
