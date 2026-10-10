@@ -13,6 +13,8 @@ nav_order: 2
 
 The `planTrip` endpoint is used for planning charging stops along a route.
 
+**Superseded.** As of 2026-10 the gateway rejects this query with `GRAPHQL_VALIDATION_FAILED`. App 3.17.0 uses [`planTripWithMultiStopV2`](/app/legacy/vehicle-info/plan-trip-v2) instead.
+
 `POST https://rivian.com/api/gql/gateway/graphql`
 
 ### Required Headers

@@ -22,9 +22,9 @@ Decoders in `cm/c.parseRvmData()` — nested repeated fields for legs, stops, co
 
 ## Legacy
 
-Trip **planning** (not live progress) uses HTTP [`planTrip`](/app/legacy/vehicle-info/plan-trip).
+Trip **planning** (not live progress) uses HTTP [`planTripWithMultiStopV2`](/app/legacy/vehicle-info/plan-trip-v2) (the older `planTrip` no longer validates). Geocoding: [`places`](/app/legacy/vehicle-info/places).
 
-Share destination to vehicle: [ParseAndShareLocationToVehicle](/app/legacy/controls/share-location).
+Share destination to vehicle: [ParseAndShareLocationToVehicle](/app/legacy/controls/share-location). Clear the active trip: [End trip (`SendUpdatedTrip`)](/app/parallax/commands/end-trip), a `c2v_navigation.trip_copilot.updated_trip` Parallax payload.
 
 ## Decoding tips
 

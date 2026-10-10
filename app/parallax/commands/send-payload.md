@@ -40,7 +40,8 @@ csrf-token: <csrf token>
 ```
 
 - **`model`** — model string from the vehicle identity record.
-- **`parallaxPayloadB64`** — nested protobuf built by the app (`z70/*` envelopes + domain messages). MITM capture is the practical way to inspect real payloads.
+- **`parallaxPayloadB64`** — nested protobuf built by the app (`z70/*` envelopes + domain messages). The app pins certificates, so MITM capture of the phone fails; decompiling the APK (jadx) and reading the generated protobuf-lite descriptors is the practical way. The envelope seen for `c2v_navigation.trip_copilot.updated_trip` is `{ 10: value { 2: bytes }, 12: Timestamp, 16: correlationId (16 random bytes) }`; see [End trip](/app/parallax/commands/end-trip) for a full worked payload.
+- Not every Parallax send is a vehicle-model op: the trip copilot mutation uses `isVehicleModelOp: false` with a fixed `model`.
 
 ## Response
 

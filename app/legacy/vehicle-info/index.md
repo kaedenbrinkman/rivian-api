@@ -14,7 +14,9 @@ HTTP queries for account/vehicle metadata, trip planning, OTA release notes, and
 ## Endpoints
 
 - [`VehiclesAndEnrollments`](/app/legacy/vehicle-info/vehicles-and-enrollments) - list vehicles, configuration, and key enrollments
-- [`planTrip`](/app/legacy/vehicle-info/plan-trip) - plan charging for a trip
+- [`planTripWithMultiStopV2`](/app/legacy/vehicle-info/plan-trip-v2) - plan a trip with charging stops (current)
+- [`places` / `PlaceByUrl`](/app/legacy/vehicle-info/places) - geocode text or a share link to a place
+- [`planTrip`](/app/legacy/vehicle-info/plan-trip) - plan charging for a trip (superseded)
 - [`RegisterPushNotificationToken`](/app/legacy/vehicle-info/push-notifications) - register a push notification token for your account
 - [`getOTAUpdateDetails`](/app/legacy/vehicle-info/ota-update-details) - get OTA update details (release notes)
 - [`getVehicleImages`](/app/legacy/vehicle-info/vehicle-images) - get images for your vehicle configuration
