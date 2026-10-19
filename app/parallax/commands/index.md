@@ -14,6 +14,7 @@ Remote commands and vehicle-model writes when `parallaxCommand` and per-domain `
 - [sendParallaxPayload](/app/parallax/commands/send-payload) — gateway mutation
 - [Command status (`vehicleCommandStatePx`)](/app/parallax/commands/command-status) — WebSocket subscription
 - [End trip (`SendUpdatedTrip`)](/app/parallax/commands/end-trip) — clear the active trip; `isVehicleModelOp: false`, no phone key
+- [Lock and unlock (body commands)](/app/parallax/commands/body-commands) — signed `Operation`, wakes a sleeping vehicle, no separate wake command
 
 Fallback when Parallax is off: [Legacy controls](/app/legacy/controls).
 

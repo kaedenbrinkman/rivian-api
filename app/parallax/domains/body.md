@@ -32,4 +32,4 @@ Practical approach:
 
 ## Commands
 
-Lock/unlock, windows, frunk, liftgate, tailgate, charge port, side bins → `PARALLAX_BODY_COMMAND` when enabled. Fallback: legacy [controls](/app/legacy/controls).
+Lock/unlock, windows, frunk, liftgate, tailgate, charge port, side bins → `PARALLAX_BODY_COMMAND` (`PVS_BD_CMD`) when enabled. Commands use the RVMs `body.locks.unlock`, `body.locks.lock`, `body.closures.open` and `body.closures.close`; see [Lock and unlock](/app/parallax/commands/body-commands). Fallback: legacy [controls](/app/legacy/controls).
