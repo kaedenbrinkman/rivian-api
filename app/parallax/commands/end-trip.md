@@ -67,7 +67,7 @@ message Preferences { float currentArrivalSoCPercentage = 1; float defaultArriva
 message Publisher { string userId = 1; }  // currentUser.id
 ```
 
-The app sets `lastUpdate.seconds = ms / 1000` and `lastUpdate.nanos = ms % 1000000000`.
+The app sets `lastUpdate.seconds = ms / 1000` and `lastUpdate.nanos = (ms % 1000) * 1000000`.
 
 Example End Trip payload for user `user-placeholder` at `1760000000000` ms, decoded:
 

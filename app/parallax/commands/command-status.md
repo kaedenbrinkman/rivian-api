@@ -30,7 +30,7 @@ Same URL and headers as [ParallaxMessages](/app/parallax/subscription).
 }
 ```
 
-`commandId` is assigned when the app issues `sendParallaxPayload`.
+`commandId` is the command's UUID as a string: the 16 bytes the client puts in the payload (envelope field 16 and operation field 3). The client chooses it, so subscribe **before** sending and no early progress is missed.
 
 ## Response
 
@@ -46,5 +46,33 @@ Same URL and headers as [ParallaxMessages](/app/parallax/subscription).
   }
 }
 ```
+
+## Payload
+
+Standard base64 of this protobuf, field numbers as the app's generated classes declare them:
+
+```protobuf
+message CommandState {
+  bytes refUuid = 1;                 // the command id
+  string refModel = 2;               // e.g. "body.locks.unlock"
+  Progress progress = 3;
+  oneof result {
+    OperationError operationError = 4;
+    bytes data = 5;                  // a serialized CommandResult
+  }
+}
+enum Progress { UNSPECIFIED = 0; VEHICLE_WAKING_UP = 1; VALIDATING = 2; EXECUTING = 3; COMPLETE = 4; }
+
+message CommandResult { Status responseStatus = 1; Error error = 2; }
+enum Status { UNDEFINED = 0; SUCCESS = 1; FAIL = 2; INVALID_REQUEST = 3; NOT_SUPPORTED = 4; TIMEOUT = 5; }
+message Error { int32 code = 1; string message = 2; }
+message OperationError { Error error = 1; string message = 2; }
+```
+
+- Progress 1 to 3 are intermediate; `COMPLETE` is the last message. `VEHICLE_WAKING_UP` can repeat.
+- Success is `COMPLETE` with `data.responseStatus == SUCCESS`. A failure is `COMPLETE` with another status or an `operationError`; there is no separate failed progress value.
+- The app treats `INVALID_REQUEST` and `NOT_SUPPORTED` as a signal to use the legacy command instead (this part is from the decompile, not tested).
+
+Observed for an unlock sent to a sleeping R1T: `VEHICLE_WAKING_UP` twice, then `EXECUTING`, then `COMPLETE` with `SUCCESS`, 26 s after the send. See [Lock and unlock](/app/parallax/commands/body-commands#observed).
 
 Legacy alternative: [`vehicleCommandState`](/app/legacy/websocket-subscriptions) / [`getVehicleCommand`](/app/legacy/controls/get-vehicle-command).

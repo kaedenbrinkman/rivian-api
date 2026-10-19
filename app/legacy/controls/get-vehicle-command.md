@@ -53,3 +53,42 @@ csrf-token: <your CSRF token>
   }
 }
 ```
+
+## States
+
+`state` is an integer. The same values come back from the `vehicleCommandState` subscription and from `sendVehicleCommand`'s own response. From the Android app (3.17.0):
+
+| `state` | Name in the app | Final? |
+| --- | --- | --- |
+| 0 | COMPLETE | yes |
+| 1 | QUEUED | no |
+| 2 | SYNC | no |
+| 3 | PROCESSING | no |
+| 4 | FAILED_TO_EXECUTE | yes |
+| 5 | WAKE (the app shows "Waking vehicle") | no |
+| 6 | FAILED_CONNECTIVITY | yes |
+| 7 | FAILED_VIN_MAPPING | yes |
+| other | unknown | yes |
+
+Verified: a `WAKE_VEHICLE` sent to an R1T with no cell coverage later read `state: 6`. The rest is from the decompile.
+
+The app stops following a command at the first final state. It does not follow `WAKE_VEHICLE` at all: that subscription is cancelled after its first event.
+
+## Response codes
+
+For `COMPLETE`, the app reads `responseCode` to decide whether the vehicle did the command. From the decompile, not tested:
+
+| `responseCode` | Meaning |
+| --- | --- |
+| `null` or `928` | success |
+| `929` | failed |
+| other | success if it is that command's own success code (for `UNLOCK_ALL_CLOSURES`, `258`) |
+| `1031` | invalid HMAC |
+| `1042` | invalid timestamp |
+| `1045` | `vasPhoneId` not paired over Bluetooth |
+| `1047` | public key missing |
+| `22` | close command received, not done: actuation disabled by the power mode |
+
+## How long the app waits
+
+The app waits 60 s for a command to finish (90 s for vehicles with the `HMAC_TIMEOUT_90S` feature, 120 s if the vehicle was asleep when it was sent). On a timeout it reports the failure and does **not** resend the command.
