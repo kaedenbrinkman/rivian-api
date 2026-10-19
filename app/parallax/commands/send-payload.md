@@ -39,7 +39,7 @@ csrf-token: <csrf token>
 }
 ```
 
-- **`model`** — the command's RVM, e.g. `body.locks.unlock`, or a fixed model such as `c2v_navigation.trip_copilot.updated_trip`. It repeats the `model` inside the payload.
+- **`model`** — the command's RVM, e.g. `body.locks.unlock`, or a fixed model such as `c2v_navigation.trip_copilot.updated_trip`. For signed commands the same string is inside the payload; the trip copilot message carries no model.
 - **`parallaxPayloadB64`** — nested protobuf built by the app (`z70/*` envelopes + domain messages). The app pins certificates, so MITM capture of the phone fails; decompiling the APK (jadx) and reading the generated protobuf-lite descriptors is the practical way. The envelope seen for `c2v_navigation.trip_copilot.updated_trip` is `{ 10: value { 2: bytes }, 12: Timestamp, 16: correlationId (16 random bytes) }`; see [End trip](/app/parallax/commands/end-trip) for a full worked payload.
 - Remote commands (lock, unlock, closures) add a signed security block as field 17 of the envelope and put an `Operation` message (RVM, request type, command id, command bytes, vehicle id) in the value; see [Lock and unlock](/app/parallax/commands/body-commands).
 - Not every Parallax send is a vehicle-model op: the trip copilot mutation uses `isVehicleModelOp: false` with a fixed `model` and no signature.

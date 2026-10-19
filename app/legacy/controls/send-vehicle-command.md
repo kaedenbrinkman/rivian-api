@@ -47,12 +47,6 @@ CLOSE_TONNEAU_COVER
 
 The app's lock button sends `LOCK_ALL_CLOSURES_FEEDBACK`.
 
-## Sleeping vehicle
-
-The app does not send `WAKE_VEHICLE` before a command. If the vehicle is asleep it sends the command, shows "Waking vehicle", and follows `state` (`5` means the vehicle is being woken) with [`getVehicleCommand`](/app/legacy/controls/get-vehicle-command). It waits up to 120 s and does not resend. `WAKE_VEHICLE` is sent only by the app's "vehicle is sleeping" sheet and when scheduling a software update.
-
-For the Parallax equivalent, which wakes the vehicle as part of the request, see [Lock and unlock](/app/parallax/commands/body-commands).
-
 `POST https://rivian.com/api/gql/gateway/graphql`
 
 ### Required Headers
@@ -96,6 +90,12 @@ csrf-token: <your CSRF token>
   }
 }
 ```
+
+## Sleeping vehicle
+
+The app does not send `WAKE_VEHICLE` before a command. If the vehicle is asleep it sends the command, shows "Waking vehicle", and follows `state` (`5` means the vehicle is being woken) with [`getVehicleCommand`](/app/legacy/controls/get-vehicle-command). It waits up to 120 s and does not resend. `WAKE_VEHICLE` is sent only by the app's "vehicle is sleeping" sheet and when scheduling a software update (only if the vehicle is asleep).
+
+For the Parallax equivalent, which wakes the vehicle as part of the request, see [Lock and unlock](/app/parallax/commands/body-commands).
 
 ## Parallax command path
 

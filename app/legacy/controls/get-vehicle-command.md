@@ -67,10 +67,10 @@ csrf-token: <your CSRF token>
 | 4 | FAILED_TO_EXECUTE | yes |
 | 5 | WAKE (the app shows "Waking vehicle") | no |
 | 6 | FAILED_CONNECTIVITY | yes |
-| 7 | FAILED_VIN_MAPPING | yes |
+| 7 | FAILED_VIN_MAPPING_TO_VEHICLE | yes |
 | other | unknown | yes |
 
-Verified: a `WAKE_VEHICLE` sent to an R1T with no cell coverage later read `state: 6`. The rest is from the decompile.
+Verified: a `WAKE_VEHICLE` sent to an R1T that never answered (a suspected cell dead spot) later read `state: 6`. The rest is from the decompile.
 
 The app stops following a command at the first final state. It does not follow `WAKE_VEHICLE` at all: that subscription is cancelled after its first event.
 
@@ -82,12 +82,12 @@ For `COMPLETE`, the app reads `responseCode` to decide whether the vehicle did t
 | --- | --- |
 | `null` or `928` | success |
 | `929` | failed |
-| other | success if it is that command's own success code (for `UNLOCK_ALL_CLOSURES`, `258`) |
+| other | success only if the app maps the code to a success for that command (for example `258` is the `UNLOCK_ALL_CLOSURES` success); unmapped codes count as failures |
 | `1031` | invalid HMAC |
 | `1042` | invalid timestamp |
 | `1045` | `vasPhoneId` not paired over Bluetooth |
 | `1047` | public key missing |
-| `22` | close command received, not done: actuation disabled by the power mode |
+| `22` | close command received, not done: actuation disabled |
 
 ## How long the app waits
 

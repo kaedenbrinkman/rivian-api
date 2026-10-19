@@ -30,7 +30,7 @@ Same URL and headers as [ParallaxMessages](/app/parallax/subscription).
 }
 ```
 
-`commandId` is the command's UUID as a string: the 16 bytes the client puts in the payload (envelope field 16 and operation field 3). The client chooses it, so subscribe **before** sending and no early progress is missed.
+`commandId` is the command's UUID as a string: the 16 bytes the client puts in the payload (envelope field 16 and operation field 3). The client chooses it, so you can subscribe **before** sending and miss no early progress (the app itself subscribes after the send is accepted).
 
 ## Response
 
@@ -66,12 +66,12 @@ enum Progress { UNSPECIFIED = 0; VEHICLE_WAKING_UP = 1; VALIDATING = 2; EXECUTIN
 message CommandResult { Status responseStatus = 1; Error error = 2; }
 enum Status { UNDEFINED = 0; SUCCESS = 1; FAIL = 2; INVALID_REQUEST = 3; NOT_SUPPORTED = 4; TIMEOUT = 5; }
 message Error { int32 code = 1; string message = 2; }
-message OperationError { Error error = 1; string message = 2; }
+message OperationError { int32 error = 1; string message = 2; } // field 1 is an enum the app never reads; values not decompiled
 ```
 
 - Progress 1 to 3 are intermediate; `COMPLETE` is the last message. `VEHICLE_WAKING_UP` can repeat.
 - Success is `COMPLETE` with `data.responseStatus == SUCCESS`. A failure is `COMPLETE` with another status or an `operationError`; there is no separate failed progress value.
-- The app treats `INVALID_REQUEST` and `NOT_SUPPORTED` as a signal to use the legacy command instead (this part is from the decompile, not tested).
+- The app only tells `SUCCESS` apart from every other status. It also counts a result as failed, even with status `SUCCESS`, when `error.code` is one of: invalid HMAC (1031), invalid timestamp (1042), phone id not paired over Bluetooth (1045), phone id not on the whitelist, public key missing (1047), remote command streaming unavailable, or the Gear Guard active limit reached. I found no fallback to the legacy command on any status.
 
 Observed for an unlock sent to a sleeping R1T: `VEHICLE_WAKING_UP` twice, then `EXECUTING`, then `COMPLETE` with `SUCCESS`, 26 s after the send. See [Lock and unlock](/app/parallax/commands/body-commands#observed).
 

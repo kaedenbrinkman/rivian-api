@@ -13,7 +13,7 @@ nav_order: 3
 
 Clears the vehicle's active trip, the way the app's **End Trip** button does. The app uses the same mutation to push an edited multi-stop trip; the end-trip payload is the degenerate case: an empty plan whose route id is `end_trip_<ms>`.
 
-Session headers only. No phone key or HMAC is involved, and `requiresWakeup: true` is fixed in the mutation, so Rivian wakes a sleeping vehicle itself.
+Session headers only. No phone key or HMAC is involved. `requiresWakeup: true` is fixed in the mutation, but in testing it did **not** wake a sleeping vehicle: Rivian queued the command and delivered it at the next wake.
 
 Found by decompiling Android app 3.17.0 (the app pins certificates, so MITM capture does not work). Verified on an R1T, 2026-10.
 
@@ -67,7 +67,7 @@ message Preferences { float currentArrivalSoCPercentage = 1; float defaultArriva
 message Publisher { string userId = 1; }  // currentUser.id
 ```
 
-The app sets `lastUpdate.seconds = ms / 1000` and `lastUpdate.nanos = (ms % 1000) * 1000000`.
+The app sets `lastUpdate.seconds = ms / 1000` and `lastUpdate.nanos = ms % 1000000000`. (Signed body commands use `(ms % 1000) * 1000000`; see [Lock and unlock](/app/parallax/commands/body-commands).)
 
 Example End Trip payload for user `user-placeholder` at `1760000000000` ms, decoded:
 
